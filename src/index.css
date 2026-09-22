@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #050507;
+    color: #f4f4f7;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050507;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1f1f28;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #38384a;
+  }
+}
+
+/* Desktop Custom Cursor Hide System */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-enabled,
+  html.custom-cursor-enabled body,
+  html.custom-cursor-enabled a,
+  html.custom-cursor-enabled button,
+  html.custom-cursor-enabled [role="button"] {
+    cursor: none !important;
+  }
+  
+  html.custom-cursor-enabled input,
+  html.custom-cursor-enabled textarea,
+  html.custom-cursor-enabled [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
+
+/* Background Subtle Grid & Technical Coordinate Matrix */
+.bg-grid-subtle {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #ffffff 40%, #d8b4fe 75%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 70%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Path Flow */
+@keyframes pathDash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-path-dash {
+  stroke-dasharray: 6 6;
+  animation: pathDash 2s linear infinite;
+}
+
+/* SVIAS Mystery Particle Drift */
+@keyframes particlePulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.08) rotate(180deg);
+    opacity: 0.65;
+  }
+}
+
+.animate-svias-orbit {
+  animation: particlePulse 18s ease-in-out infinite;
+}
+
+/* Subtle crosshair coordinate marker */
+.coord-cross {
+  position: relative;
+}
+.coord-cross::before {
+  content: "+";
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(168, 85, 247, 0.4);
+}
