@@ -17,7 +17,7 @@ import ContactFooter from './components/ContactFooter';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#190019] text-[#FBE4D8] selection:bg-[#854F6C] selection:text-[#FBE4D8] relative">
+    <div className="min-h-screen bg-[#050507] text-[#f4f4f7] selection:bg-purple-600 selection:text-white relative">
       
       {/* Cinematic Stacked-Card & Pen Opening Sequence (Initial Load Only) */}
       <PortfolioIntroSequence />

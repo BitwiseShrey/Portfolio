@@ -11,8 +11,8 @@ export default function EducationSection() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-mono">
-            <GraduationCap className="w-3.5 h-3.5 text-teal-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono">
+            <GraduationCap className="w-3.5 h-3.5 text-purple-400" />
             <span>ACADEMIC FOUNDATION</span>
           </div>
 
@@ -27,7 +27,7 @@ export default function EducationSection() {
           {/* University Card */}
           <div className="rounded-3xl bg-[#0f0f18] border border-white/10 p-7 sm:p-8 space-y-4 relative overflow-hidden">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase px-3 py-1 rounded-md bg-teal-500/20 text-teal-300 font-semibold border border-teal-500/30">
+              <span className="text-xs font-mono uppercase px-3 py-1 rounded-md bg-purple-500/20 text-purple-300 font-semibold border border-purple-500/30">
                 Undergraduate
               </span>
               <span className="text-xs font-mono text-zinc-400">
@@ -39,7 +39,7 @@ export default function EducationSection() {
               <h3 className="text-2xl font-bold text-white">
                 {education.university}
               </h3>
-              <p className="text-sm text-teal-200 mt-1 font-medium">
+              <p className="text-sm text-purple-200 mt-1 font-medium">
                 {education.degree}
               </p>
             </div>
@@ -84,4 +84,3 @@ export default function EducationSection() {
     </section>
   );
 }
-

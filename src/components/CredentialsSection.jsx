@@ -10,8 +10,8 @@ export default function CredentialsSection() {
         {/* Compact Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-3">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-mono mb-2">
-              <BookmarkCheck className="w-3.5 h-3.5 text-teal-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono mb-2">
+              <BookmarkCheck className="w-3.5 h-3.5 text-purple-400" />
               <span>CONTINUOUS LEARNING</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
@@ -28,13 +28,13 @@ export default function CredentialsSection() {
           {CREDENTIALS.map((cred) => (
             <div
               key={cred.id}
-              className="rounded-2xl bg-[#0d0d14] border border-white/[0.08] hover:border-teal-500/30 p-5 sm:p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg group"
+              className="rounded-2xl bg-[#0d0d14] border border-white/[0.08] hover:border-purple-500/30 p-5 sm:p-6 flex flex-col justify-between transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg group"
             >
               <div className="space-y-3">
                 
                 {/* Issuer Badge & Year */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-semibold text-teal-300 uppercase tracking-wider px-2.5 py-0.5 rounded bg-teal-500/10 border border-teal-500/20">
+                  <span className="text-xs font-mono font-semibold text-purple-300 uppercase tracking-wider px-2.5 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">
                     {cred.issuer}
                   </span>
                   <span className="text-xs font-mono text-zinc-400">
@@ -43,7 +43,7 @@ export default function CredentialsSection() {
                 </div>
 
                 {/* Credential Name */}
-                <h3 className="text-base font-bold text-white group-hover:text-teal-300 transition-colors leading-snug">
+                <h3 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors leading-snug">
                   {cred.title}
                 </h3>
 
@@ -66,7 +66,7 @@ export default function CredentialsSection() {
                     href={cred.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-teal-400 hover:text-teal-300 font-semibold"
+                    className="inline-flex items-center gap-1 text-purple-400 hover:text-purple-300 font-semibold"
                   >
                     <span>View Credential</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -87,4 +87,3 @@ export default function CredentialsSection() {
     </section>
   );
 }
-

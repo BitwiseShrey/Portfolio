@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 /**
  * PortfolioIntroSequence
@@ -9,7 +9,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
  * 3. Letters of "portfolio" assemble individually (opacity, vertical displacement, blur-to-sharp, scale settle)
  * 4. Realistic matte-charcoal digital stylus pen enters from RIGHT, weaving continuously
  *    between/through the letters (RIGHT -> LEFT) with genuine SVG layer depth
- * 5. Localized teal/azure illumination wash travels in sync with the pen
+ * 5. Localized purple illumination wash travels in sync with the pen
  * 6. Pen exits LEFT; wordmark subtly activates and reacts
  * 7. Cinematic forward zoom transition: the wordmark scales forward into the camera (scale 3.8+, blur),
  *    becoming the gateway through which the viewer enters the live portfolio Hero
@@ -111,8 +111,8 @@ export default function PortfolioIntroSequence({ onComplete }) {
     };
   }, [onComplete]);
 
-  // Handle Skip button & Escape key
-  const handleSkip = useCallback(() => {
+  // Handle Skip button
+  const handleSkip = () => {
     setIsSkipping(true);
     setPhase(6);
     setTimeout(() => {
@@ -121,17 +121,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
       setIsCompleted(true);
       if (onComplete) onComplete();
     }, 350);
-  }, [onComplete]);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        handleSkip();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleSkip]);
+  };
 
   if (isCompleted) return null;
 
@@ -155,16 +145,16 @@ export default function PortfolioIntroSequence({ onComplete }) {
 
   return (
     <div 
-      className={`fixed inset-0 z-[10000] w-full h-full bg-[#190019] flex flex-col justify-between p-6 sm:p-12 md:p-16 overflow-hidden select-none transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed inset-0 z-[10000] w-full h-full bg-[#050507] flex flex-col justify-between p-6 sm:p-12 md:p-16 overflow-hidden select-none transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isZoomingForward ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-label="Portfolio Cinematic Title Sequence"
     >
-      {/* 1. Subtle Radial Ambient Atmosphere */}
+      {/* 1. Subtle Radial Ambient Violet Atmosphere */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full blur-[170px] pointer-events-none transition-opacity duration-1000"
         style={{
-          background: 'radial-gradient(circle, rgba(133, 79, 108, 0.16) 0%, rgba(82, 43, 91, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(88, 28, 135, 0.05) 50%, transparent 70%)',
           opacity: phase >= 1 ? 1 : 0
         }}
       />
@@ -180,10 +170,10 @@ export default function PortfolioIntroSequence({ onComplete }) {
             transform: phase >= 1 && !isZoomingForward ? 'translate3d(0, 0, 0)' : 'translate3d(0, -16px, 0)'
           }}
         >
-          <h1 className="text-xs sm:text-sm font-extrabold text-[#FBE4D8] uppercase tracking-[0.25em] font-sans">
+          <h1 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-[0.25em] font-sans">
             Shreyansh Uttam
           </h1>
-          <p className="text-[10px] sm:text-xs font-mono text-[#DFB6B2] tracking-wider">
+          <p className="text-[10px] sm:text-xs font-mono text-purple-300 tracking-wider">
             Product × Technology × Leadership
           </p>
         </div>
@@ -191,11 +181,11 @@ export default function PortfolioIntroSequence({ onComplete }) {
         {/* Discreet Skip Intro Button */}
         <button
           onClick={handleSkip}
-          className="px-3.5 py-1.5 rounded-full bg-[#2B124C] hover:bg-[#35165E] border border-[#DFB6B2]/20 hover:border-[#DFB6B2]/50 text-xs font-mono text-[#DFB6B2] hover:text-[#FBE4D8] transition-all backdrop-blur-md flex items-center gap-1.5 cursor-pointer shadow-lg"
+          className="px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-purple-400/50 text-xs font-mono text-zinc-400 hover:text-white transition-all backdrop-blur-md flex items-center gap-1.5 cursor-pointer shadow-lg"
           title="Skip title sequence"
         >
           <span>Skip intro</span>
-          <span className="text-[#FBE4D8]">&rarr;</span>
+          <span className="text-purple-400">&rarr;</span>
         </button>
 
       </div>
@@ -221,42 +211,42 @@ export default function PortfolioIntroSequence({ onComplete }) {
           className="w-full h-auto max-w-[1020px] overflow-visible select-none"
           style={{
             filter: isWordmarkActivated 
-              ? 'drop-shadow(0 0 35px rgba(223, 182, 178, 0.35))' 
+              ? 'drop-shadow(0 0 35px rgba(168, 85, 247, 0.45))' 
               : 'drop-shadow(0 15px 25px rgba(0,0,0,0.8))',
             transition: 'filter 600ms ease-out'
           }}
         >
           <defs>
-            {/* Base Text Linear Gradient (Muted Purple to Deep Plum) */}
+            {/* Base Text Linear Gradient (Dark Obsidian Charcoal) */}
             <linearGradient id="baseTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#522B5B" />
-              <stop offset="60%" stopColor="#2B124C" />
-              <stop offset="100%" stopColor="#190019" />
+              <stop offset="0%" stopColor="#383846" />
+              <stop offset="60%" stopColor="#22222a" />
+              <stop offset="100%" stopColor="#14141c" />
             </linearGradient>
 
-            {/* Front Overlapping Text Gradient (Mauve to Violet) */}
+            {/* Front Overlapping Text Gradient (Subtle Specular Sheen) */}
             <linearGradient id="frontTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#854F6C" />
-              <stop offset="60%" stopColor="#522B5B" />
-              <stop offset="100%" stopColor="#2B124C" />
+              <stop offset="0%" stopColor="#444454" />
+              <stop offset="60%" stopColor="#282834" />
+              <stop offset="100%" stopColor="#181822" />
             </linearGradient>
 
-            {/* Pen Metallic Barrel Gradient (Violet to Plum) */}
+            {/* Pen Metallic Barrel Gradient (Matte Charcoal with Specular Highlight) */}
             <linearGradient id="penBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#522B5B" />
-              <stop offset="25%" stopColor="#35165E" />
-              <stop offset="70%" stopColor="#2B124C" />
-              <stop offset="100%" stopColor="#190019" />
+              <stop offset="0%" stopColor="#555566" />
+              <stop offset="25%" stopColor="#30303a" />
+              <stop offset="70%" stopColor="#1e1e26" />
+              <stop offset="100%" stopColor="#2a1e3b" /> {/* Subtle purple rim on underbelly */}
             </linearGradient>
 
             {/* Pen Nib Titanium Gradient */}
             <linearGradient id="penNibGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#854F6C" />
-              <stop offset="50%" stopColor="#522B5B" />
-              <stop offset="100%" stopColor="#2B124C" />
+              <stop offset="0%" stopColor="#68687a" />
+              <stop offset="50%" stopColor="#363644" />
+              <stop offset="100%" stopColor="#1c1c22" />
             </linearGradient>
 
-            {/* Localized Warm Cream/Blush Illumination Wash */}
+            {/* Localized Violet Illumination Wash (Centered at Pen Nib & Grip) */}
             <radialGradient 
               id="penIllumination" 
               cx={`${penX + 60}`} 
@@ -264,10 +254,10 @@ export default function PortfolioIntroSequence({ onComplete }) {
               r="230" 
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0%" stopColor="#FBE4D8" stopOpacity="0.95" />
-              <stop offset="35%" stopColor="#DFB6B2" stopOpacity="0.6" />
-              <stop offset="70%" stopColor="#854F6C" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#190019" stopOpacity="0" />
+              <stop offset="0%" stopColor="#e9d5ff" stopOpacity="0.9" />
+              <stop offset="35%" stopColor="#a855f7" stopOpacity="0.5" />
+              <stop offset="70%" stopColor="#7e22ce" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="#000000" stopOpacity="0" />
             </radialGradient>
 
             {/* Realistic Pen Drop Shadow */}
@@ -287,7 +277,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
               letterSpacing: '-3px'
             }}
             fill="url(#baseTextGrad)"
-            stroke="rgba(223, 182, 178, 0.12)"
+            stroke="rgba(255, 255, 255, 0.08)"
             strokeWidth="1.2"
           >
             {letterSpecs.map((item, idx) => (
@@ -312,7 +302,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           </g>
 
           {/* ---------------------------------------------------- */}
-          {/* SVG LAYER 2: LOCALIZED BLUSH/CREAM ILLUMINATION WASH */}
+          {/* SVG LAYER 2: LOCALIZED PURPLE ILLUMINATION WASH      */}
           {/* ---------------------------------------------------- */}
           <g 
             style={{
@@ -323,9 +313,9 @@ export default function PortfolioIntroSequence({ onComplete }) {
               opacity: penGlowOpacity
             }}
             fill="url(#penIllumination)"
-            stroke="#DFB6B2"
+            stroke="#c084fc"
             strokeWidth="0.8"
-            strokeOpacity="0.55"
+            strokeOpacity="0.45"
             pointerEvents="none"
           >
             {letterSpecs.map((item, idx) => (
@@ -357,8 +347,8 @@ export default function PortfolioIntroSequence({ onComplete }) {
             {/* 3B. Stylus Pointed Drawing Nib (Facing LEFT) */}
             <path 
               d="M 0 132 L 14 129.5 L 14 134.5 Z" 
-              fill="#190019" 
-              stroke="#522B5B" 
+              fill="#101015" 
+              stroke="#4a4a58" 
               strokeWidth="0.5" 
             />
             
@@ -366,7 +356,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
             <path 
               d="M 14 129.5 L 36 124 L 36 140 L 14 134.5 Z" 
               fill="url(#penNibGrad)" 
-              stroke="#522B5B" 
+              stroke="#3a3a46" 
               strokeWidth="0.6" 
             />
 
@@ -377,14 +367,14 @@ export default function PortfolioIntroSequence({ onComplete }) {
               width="4" 
               height="18" 
               rx="1" 
-              fill="#DFB6B2" 
+              fill="#7a7a8c" 
             />
 
             {/* 3C. Ergonomic Matte Grip Section */}
             <path 
               d="M 40 123 L 95 122 L 95 142 L 40 141 Z" 
-              fill="#2B124C" 
-              stroke="#522B5B" 
+              fill="#181820" 
+              stroke="#2c2c36" 
               strokeWidth="0.5" 
             />
 
@@ -395,17 +385,17 @@ export default function PortfolioIntroSequence({ onComplete }) {
               width="26" 
               height="3.5" 
               rx="1.5" 
-              fill="#35165E" 
-              stroke="#854F6C" 
+              fill="#2a2a36" 
+              stroke="#505064" 
               strokeWidth="0.5" 
             />
-            <line x1="67" y1="120" x2="67" y2="123.5" stroke="#190019" strokeWidth="0.8" />
+            <line x1="67" y1="120" x2="67" y2="123.5" stroke="#16161c" strokeWidth="0.8" />
 
             {/* 3D. Main Cylindrical Barrel Body */}
             <path 
               d="M 95 122 L 275 124 L 275 140 L 95 142 Z" 
               fill="url(#penBodyGrad)" 
-              stroke="#522B5B" 
+              stroke="#383844" 
               strokeWidth="0.6" 
             />
 
@@ -415,26 +405,26 @@ export default function PortfolioIntroSequence({ onComplete }) {
               y1="123.5" 
               x2="275" 
               y2="125" 
-              stroke="rgba(251, 228, 216, 0.45)" 
+              stroke="rgba(255, 255, 255, 0.45)" 
               strokeWidth="0.8" 
             />
 
-            {/* Subtle Reflected Light on Underbelly */}
+            {/* Subtle Violet Reflected Light on Underbelly */}
             <line 
               x1="95" 
               y1="140.5" 
               x2="275" 
               y2="139" 
-              stroke="#DFB6B2" 
+              stroke="#a855f7" 
               strokeWidth="0.8" 
-              strokeOpacity="0.45" 
+              strokeOpacity="0.65" 
             />
 
             {/* 3E. Rounded Metallic Tail Cap */}
             <path 
               d="M 275 124 Q 288 124 290 132 Q 288 140 275 140 Z" 
-              fill="#2B124C" 
-              stroke="#522B5B" 
+              fill="#181820" 
+              stroke="#40404c" 
               strokeWidth="0.6" 
             />
           </g>
@@ -452,10 +442,22 @@ export default function PortfolioIntroSequence({ onComplete }) {
               letterSpacing: '-3px'
             }}
             fill="url(#frontTextGrad)"
-            stroke="rgba(223, 182, 178, 0.18)"
+            stroke="rgba(255, 255, 255, 0.12)"
             strokeWidth="1.2"
             pointerEvents="none"
           >
+            {/* 
+              When the pen moves RIGHT -> LEFT:
+              - Enters over 'o' (pen in front of letter 8)
+              - Passes BEHIND 'i' (Letter 7 is in foreground!)
+              - Passes IN FRONT OF 'l' (Letter 6 in background)
+              - Passes BEHIND middle 'o' (Letter 5 in foreground!)
+              - Passes IN FRONT OF 'f' (Letter 4 in background)
+              - Passes BEHIND 't' (Letter 3 is in foreground!)
+              - Passes IN FRONT OF 'r' (Letter 2 in background)
+              - Passes BEHIND first 'o' (Letter 1 is in foreground!)
+              - Passes IN FRONT OF 'p' (Letter 0 in background)
+            */}
             <text 
               x="180" 
               y="180"
@@ -511,7 +513,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           </g>
 
           {/* ---------------------------------------------------- */}
-          {/* SVG LAYER 5: FOREGROUND LETTER AMBIENT WASH          */}
+          {/* SVG LAYER 5: FOREGROUND LETTER AMBIENT PURPLE WASH   */}
           {/* ---------------------------------------------------- */}
           <g 
             style={{
@@ -522,9 +524,9 @@ export default function PortfolioIntroSequence({ onComplete }) {
               opacity: penGlowOpacity
             }}
             fill="url(#penIllumination)"
-            stroke="#DFB6B2"
+            stroke="#c084fc"
             strokeWidth="0.8"
-            strokeOpacity="0.55"
+            strokeOpacity="0.45"
             pointerEvents="none"
           >
             <text x="180" y="180">o</text>
@@ -538,7 +540,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
 
       {/* 4. Bottom Footer Markings */}
       <div 
-        className="w-full flex items-center justify-between text-[10px] sm:text-xs font-mono text-[#DFB6B2]/70 pt-4 border-t border-[#DFB6B2]/10 relative z-20 transition-all duration-800"
+        className="w-full flex items-center justify-between text-[10px] sm:text-xs font-mono text-zinc-500 pt-4 border-t border-white/[0.06] relative z-20 transition-all duration-800"
         style={{
           opacity: phase >= 1 && !isZoomingForward ? 1 : 0,
           transform: phase >= 1 && !isZoomingForward ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)'
@@ -548,7 +550,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
           <span>INITIALIZING DIGITAL ARCHIVE</span>
         </span>
-        <span className="text-[#DFB6B2]/50 hidden sm:inline">AUTHENTIC DIGITAL LAB</span>
+        <span className="text-zinc-600 hidden sm:inline">AUTHENTIC DIGITAL LAB</span>
         <span>23.25° N · 77.41° E</span>
       </div>
 

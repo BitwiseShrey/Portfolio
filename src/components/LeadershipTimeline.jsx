@@ -11,8 +11,8 @@ export default function LeadershipTimeline() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-mono">
-            <Calendar className="w-3.5 h-3.5 text-teal-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono">
+            <Calendar className="w-3.5 h-3.5 text-purple-400" />
             <span>PROGRESSION & MILESTONES</span>
           </div>
 
@@ -26,7 +26,7 @@ export default function LeadershipTimeline() {
         </div>
 
         {/* Interactive Vertical Timeline Spine */}
-        <div className="relative pl-6 sm:pl-10 md:pl-32 border-l border-teal-500/25 space-y-12">
+        <div className="relative pl-6 sm:pl-10 md:pl-32 border-l border-purple-500/25 space-y-12">
           {LEADERSHIP_TIMELINE.map((item, idx) => (
             <div 
               key={idx}
@@ -36,18 +36,18 @@ export default function LeadershipTimeline() {
             >
               {/* Timeline Indicator Node */}
               <div className="absolute -left-[31px] sm:-left-[47px] md:-left-[135px] top-1.5 flex items-center gap-3">
-                <span className="hidden md:block font-mono text-xs font-bold text-teal-400 w-16 text-right">
+                <span className="hidden md:block font-mono text-xs font-bold text-purple-400 w-16 text-right">
                   {item.year}
                 </span>
-                <div className="w-4 h-4 rounded-full bg-[#08080d] border-2 border-teal-500 flex items-center justify-center group-hover:scale-125 group-hover:border-teal-300 transition-transform">
-                  <div className="w-1.5 h-1.5 rounded-full bg-teal-400"></div>
+                <div className="w-4 h-4 rounded-full bg-[#08080d] border-2 border-purple-500 flex items-center justify-center group-hover:scale-125 group-hover:border-purple-300 transition-transform">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
                 </div>
               </div>
 
               {/* Card */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-[#0f0f18] border border-white/10 group-hover:border-teal-500/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-teal-950/20">
+              <div className="p-6 sm:p-7 rounded-2xl bg-[#0f0f18] border border-white/10 group-hover:border-purple-500/50 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-purple-950/20">
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <span className="text-xs font-mono uppercase px-2.5 py-0.5 rounded-md bg-teal-500/15 text-teal-300 font-semibold border border-teal-500/20">
+                  <span className="text-xs font-mono uppercase px-2.5 py-0.5 rounded-md bg-purple-500/15 text-purple-300 font-semibold border border-purple-500/20">
                     {item.category}
                   </span>
                   <span className="text-xs font-mono text-zinc-400">
@@ -55,7 +55,7 @@ export default function LeadershipTimeline() {
                   </span>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-teal-300 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
                   {item.title}
                 </h3>
 
@@ -72,4 +72,3 @@ export default function LeadershipTimeline() {
     </section>
   );
 }
-

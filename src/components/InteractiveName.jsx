@@ -138,13 +138,13 @@ export default function InteractiveName({ className = '' }) {
       onMouseMove={handleMouseMove}
       onMouseEnter={updateRectsCache}
       onMouseLeave={handleMouseLeave}
-      className={`inline-flex flex-wrap items-baseline gap-x-4 sm:gap-x-6 select-none cursor-default ${className}`}
+      className={`flex flex-col items-start gap-y-0.5 sm:gap-y-1 md:gap-y-1.5 select-none cursor-default leading-[0.92] ${className}`}
       aria-label="Shreyansh Uttam"
     >
       {words.map((word) => (
         <span 
           key={word.text} 
-          className="inline-flex whitespace-nowrap"
+          className="inline-flex whitespace-nowrap tracking-tight"
         >
           {word.text.split('').map((char, charIdx) => {
             const globalIndex = word.startIndex + charIdx;
@@ -153,7 +153,7 @@ export default function InteractiveName({ className = '' }) {
               <span
                 key={globalIndex}
                 ref={(el) => (letterNodesRef.current[globalIndex] = el)}
-                className="inline-block font-display font-normal tracking-tight text-[#FBE4D8] origin-center pointer-events-none"
+                className="inline-block font-display font-normal tracking-tight text-white origin-center pointer-events-none"
                 style={{
                   transform: 'translate3d(0, 0, 0) rotate(0deg) scale(1)',
                   transition: 'transform 360ms cubic-bezier(0.22, 1, 0.36, 1)',
