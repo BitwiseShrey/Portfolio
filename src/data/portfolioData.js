@@ -1,5 +1,5 @@
 // Central Data Store for Shreyansh Uttam's Personal Portfolio
-// Strict Privacy: Zero disclosure of SVIAS proprietary architecture or algorithms.
+// Strict Privacy: Zero disclosure of SVIAS proprietary architecture or specifications.
 
 export const PERSONAL_INFO = {
   name: "Shreyansh Uttam",
@@ -91,7 +91,7 @@ export const SVIAS_DATA = {
   modalDetails: {
     problem: "Understanding spoken words in high-noise surroundings is exhausting and exclusionary. Existing solutions often amplify everything equally, exacerbating cognitive fatigue.",
     vision: "Creating an intelligent conversational listening layer that prioritizes the human voice a listener cares about, preserving conversational intimacy and clarity.",
-    stage: "Private prototype in active exploration and bench testing. Architecture and algorithms remain confidential while user testing is conducted.",
+    stage: "Private prototype in active exploration and bench testing. Architecture and technical specifications remain confidential while user testing is conducted.",
     role: "Product Concept Lead & Prototyper — formulating the user problem, target experience benchmarks, and product specifications.",
     exploring: "Accessibility pathways, low-latency device integration, assistive listening interfaces, and ergonomic form factors for daily environments."
   },
@@ -143,7 +143,7 @@ export const SELECTED_PROJECTS = [
     modalDetails: {
       overview: "A non-intrusive safety system continuously tracking facial landmarks, eye closure frequency, and yawning to detect micro-sleep patterns in vehicle operators.",
       challenges: "Maintaining reliable landmark tracking under low-light nighttime driving conditions.",
-      takeaway: "Emphasized the critical balance between biometric algorithm sensitivity and latency in life-critical systems."
+      takeaway: "Emphasized the critical balance between biometric model sensitivity and latency in life-critical systems."
     }
   }
 ];

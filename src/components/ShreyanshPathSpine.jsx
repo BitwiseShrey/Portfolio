@@ -50,14 +50,14 @@ export default function ShreyanshPathSpine() {
       >
         {/* Progress Beam */}
         <div 
-          className="h-full bg-gradient-to-r from-[#2DBEB8] via-[#6FE7E1] to-[#7AA7FF] relative transition-all duration-75 ease-out shadow-[0_0_10px_rgba(111,231,225,0.7)]"
+          className="h-full bg-gradient-to-r from-[#854F6C] via-[#DFB6B2] to-[#FBE4D8] relative transition-all duration-75 ease-out shadow-[0_0_10px_rgba(223,182,178,0.7)]"
           style={{ width: `${scrollProgress * 100}%` }}
         >
-          {/* Glowing Teal Comet Head */}
+          {/* Glowing Warm Cream Comet Head */}
           <div 
-            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-2.5 h-2.5 rounded-full bg-white shadow-[0_0_10px_#6FE7E1,0_0_20px_#7AA7FF]"
+            className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#FBE4D8] shadow-[0_0_10px_#DFB6B2,0_0_20px_#854F6C]"
           >
-            <div className="absolute inset-0 rounded-full bg-[#6FE7E1] animate-ping opacity-75"></div>
+            <div className="absolute inset-0 rounded-full bg-[#DFB6B2] animate-ping opacity-75"></div>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@ export default function ShreyanshPathSpine() {
       {/* 2. Side Trajectory Node Spine (Subtle Desktop Minimalist Waypoint Track) */}
       <nav 
         aria-label="Section Navigation"
-        className="fixed right-5 sm:right-7 top-1/2 -translate-y-1/2 z-40 hidden 2xl:flex flex-col items-center gap-3.5 py-4 px-2 rounded-full bg-[#08090A]/70 backdrop-blur-md border border-white/[0.06] shadow-xl"
+        className="fixed right-5 sm:right-7 top-1/2 -translate-y-1/2 z-40 hidden 2xl:flex flex-col items-center gap-3.5 py-4 px-2 rounded-full bg-[#190019]/85 backdrop-blur-md border border-[#DFB6B2]/15 shadow-xl"
       >
         {SECTIONS.map((sec) => {
           const isActive = activeSection === sec.id;
@@ -80,13 +80,13 @@ export default function ShreyanshPathSpine() {
               <div 
                 className={`transition-all duration-300 rounded-full ${
                   isActive
-                    ? 'w-2 h-4 bg-[#6FE7E1] shadow-[0_0_10px_#6FE7E1]'
-                    : 'w-1.5 h-1.5 bg-zinc-600 group-hover:bg-zinc-300 group-hover:scale-125'
+                    ? 'w-2 h-4 bg-[#DFB6B2] shadow-[0_0_10px_#DFB6B2]'
+                    : 'w-1.5 h-1.5 bg-[#522B5B] group-hover:bg-[#DFB6B2] group-hover:scale-125'
                 }`}
               />
 
               {/* Flyout Label on Hover */}
-              <span className="absolute right-7 px-2.5 py-1 rounded-md bg-[#101214] border border-[#6FE7E1]/30 text-[10px] font-mono text-[#6FE7E1] tracking-wider uppercase opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity shadow-lg whitespace-nowrap">
+              <span className="absolute right-7 px-2.5 py-1 rounded-md bg-[#2B124C] border border-[#DFB6B2]/30 text-[10px] font-mono text-[#FBE4D8] tracking-wider uppercase opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity shadow-lg whitespace-nowrap">
                 {sec.label}
               </span>
             </a>

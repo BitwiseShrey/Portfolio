@@ -153,7 +153,7 @@ export default function InteractiveName({ className = '' }) {
               <span
                 key={globalIndex}
                 ref={(el) => (letterNodesRef.current[globalIndex] = el)}
-                className="inline-block font-serif font-normal tracking-tight text-[#F3F0E8] origin-center pointer-events-none"
+                className="inline-block font-display font-normal tracking-tight text-[#FBE4D8] origin-center pointer-events-none"
                 style={{
                   transform: 'translate3d(0, 0, 0) rotate(0deg) scale(1)',
                   transition: 'transform 360ms cubic-bezier(0.22, 1, 0.36, 1)',

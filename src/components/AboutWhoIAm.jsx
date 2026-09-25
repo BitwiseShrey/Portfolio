@@ -8,16 +8,16 @@ export default function AboutWhoIAm() {
 
   const getIdentityIcon = (title) => {
     switch (title) {
-      case 'PRODUCT': return <Compass className="w-4 h-4 text-[#6FE7E1]" />;
-      case 'TECHNOLOGY': return <Layers className="w-4 h-4 text-[#6FE7E1]" />;
-      case 'LEADERSHIP': return <Users className="w-4 h-4 text-[#6FE7E1]" />;
-      case 'ENTREPRENEURSHIP': return <TrendingUp className="w-4 h-4 text-[#6FE7E1]" />;
+      case 'PRODUCT': return <Compass className="w-4 h-4 text-[#DFB6B2]" />;
+      case 'TECHNOLOGY': return <Layers className="w-4 h-4 text-[#DFB6B2]" />;
+      case 'LEADERSHIP': return <Users className="w-4 h-4 text-[#DFB6B2]" />;
+      case 'ENTREPRENEURSHIP': return <TrendingUp className="w-4 h-4 text-[#DFB6B2]" />;
       default: return null;
     }
   };
 
   return (
-    <section id="about" ref={ref} className="py-20 md:py-28 border-t border-white/[0.08] bg-[#08090A] relative overflow-hidden">
+    <section id="about" ref={ref} className="py-20 md:py-28 border-t border-[#DFB6B2]/10 bg-[#190019] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Navigation Micro-Label */}
@@ -28,11 +28,11 @@ export default function AboutWhoIAm() {
             transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, -10px, 0)'
           }}
         >
-          <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#6FE7E1] font-medium flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1]"></span>
+          <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#DFB6B2] font-medium flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DFB6B2]"></span>
             <span>02 / ABOUT ME</span>
           </div>
-          <span className="text-xs font-mono text-[#A7AAA8]/70 hidden sm:inline tracking-wider">
+          <span className="text-xs font-mono text-[#DFB6B2]/60 hidden sm:inline tracking-wider">
             PROFILE &amp; CONVERGENCE SPECTRUM
           </span>
         </div>
@@ -48,11 +48,11 @@ export default function AboutWhoIAm() {
               transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(-36px, 0, 0)'
             }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal font-serif text-[#F3F0E8] tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal font-display text-[#FBE4D8] tracking-tight leading-[1.15]">
               "{ABOUT_ME.opening}"
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#A7AAA8] leading-relaxed font-normal">
+            <div className="space-y-4 text-sm sm:text-base text-[#DFB6B2]/90 leading-relaxed font-normal">
               {ABOUT_ME.paragraphs.map((p, idx) => (
                 <p 
                   key={idx}
@@ -80,7 +80,7 @@ export default function AboutWhoIAm() {
           >
             <div 
               data-spotlight
-              className="rounded-2xl overflow-hidden bg-[#101214] border border-white/10 hover:border-[#6FE7E1]/40 p-2 shadow-xl hover:shadow-2xl hover:shadow-black/60 transition-all duration-300 group"
+              className="rounded-2xl overflow-hidden bg-[#2B124C] border border-[#DFB6B2]/15 hover:border-[#854F6C]/60 p-2 shadow-xl hover:shadow-2xl hover:shadow-black/60 transition-all duration-300 group"
             >
               <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-black/60">
                 <img
@@ -88,10 +88,10 @@ export default function AboutWhoIAm() {
                   alt="Shreyansh Uttam at Workstation"
                   className="w-full h-full object-cover filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090A] via-transparent to-transparent opacity-60"></div>
-                <div className="absolute bottom-3 left-3 text-[11px] font-mono text-[#F3F0E8] flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1] animate-pulse"></span>
-                  <span className="text-[#6FE7E1] font-semibold">Building &amp; Prototyping</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#190019] via-transparent to-transparent opacity-60"></div>
+                <div className="absolute bottom-3 left-3 text-[11px] font-mono text-[#FBE4D8] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DFB6B2] animate-pulse"></span>
+                  <span className="text-[#DFB6B2] font-semibold">Building &amp; Prototyping</span>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function AboutWhoIAm() {
             <div
               key={item.title}
               data-spotlight
-              className="p-5 rounded-2xl bg-[#101214] border border-white/[0.08] hover:border-[#6FE7E1]/40 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-black/60 flex flex-col justify-between group relative overflow-hidden"
+              className="p-5 rounded-2xl bg-[#2B124C] border border-[#DFB6B2]/12 hover:border-[#854F6C]/60 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lg hover:shadow-black/60 flex flex-col justify-between group relative overflow-hidden"
               style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 24px, 0)',
@@ -116,21 +116,21 @@ export default function AboutWhoIAm() {
               <div 
                 className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{
-                  background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(111, 231, 225, 0.12), transparent 70%)'
+                  background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(223, 182, 178, 0.12), transparent 70%)'
                 }}
               />
 
               <div>
                 <div className="flex items-center gap-2 mb-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 group-hover:border-[#6FE7E1]/40 group-hover:bg-[#6FE7E1]/10 flex items-center justify-center transition-colors">
+                  <div className="w-7 h-7 rounded-lg bg-[#522B5B] border border-[#854F6C]/40 group-hover:border-[#DFB6B2]/50 group-hover:bg-[#854F6C]/30 flex items-center justify-center transition-colors">
                     {getIdentityIcon(item.title)}
                   </div>
-                  <span className="text-xs font-mono font-bold tracking-wider text-[#6FE7E1] group-hover:text-[#6FE7E1]/90 transition-colors">
+                  <span className="text-xs font-mono font-bold tracking-wider text-[#DFB6B2] group-hover:text-[#FBE4D8] transition-colors">
                     {item.title}
                   </span>
                 </div>
 
-                <p className="text-xs text-[#A7AAA8] leading-relaxed">
+                <p className="text-xs text-[#DFB6B2]/80 leading-relaxed">
                   {item.sentence}
                 </p>
               </div>
