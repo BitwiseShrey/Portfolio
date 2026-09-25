@@ -10,11 +10,11 @@ export default function AWSLeadership() {
     <section 
       id="aws-leadership" 
       ref={ref}
-      className="py-20 md:py-32 border-t border-white/[0.08] bg-[#050508] relative overflow-hidden"
+      className="py-20 md:py-32 border-t border-white/[0.08] bg-[#08090A] relative overflow-hidden"
     >
-      {/* Background radial purple wash */}
+      {/* Background radial azure wash */}
       <div 
-        className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10 transition-opacity duration-1000"
+        className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-[#7AA7FF]/5 rounded-full blur-[140px] pointer-events-none -z-10 transition-opacity duration-1000"
         style={{ opacity: inView ? 1 : 0 }}
       />
 
@@ -29,32 +29,32 @@ export default function AWSLeadership() {
           }}
         >
           <div>
-            <div className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-              <span>Community Leadership · VIT Bhopal</span>
+            <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#6FE7E1] font-medium mb-2.5 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1]"></span>
+              <span>05 / LEADERSHIP &amp; SCALE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal font-serif text-[#F3F0E8] tracking-tight">
               AWS Student Builder Group Leader
             </h2>
-            <p className="text-xs sm:text-sm text-zinc-400 mt-2 max-w-xl">
+            <p className="text-xs sm:text-sm text-[#A7AAA8] mt-2 max-w-xl leading-relaxed">
               Heading the official campus student cloud community, empowering student builders, and hosting flagship cloud summits.
             </p>
           </div>
 
           {/* Verified Metrics Pill */}
           <div 
-            className="flex items-center gap-3 text-xs font-mono text-zinc-300 bg-white/[0.04] px-4 py-2.5 rounded-xl border border-white/[0.08] self-start sm:self-auto shrink-0 transition-all duration-700"
+            className="flex items-center gap-3 text-xs font-mono text-[#F3F0E8] bg-[#101214] px-4 py-2.5 rounded-xl border border-white/[0.08] self-start sm:self-auto shrink-0 transition-all duration-700"
             style={{
               opacity: inView ? 1 : 0,
               transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(20px, 0, 0)',
               transitionDelay: '150ms'
             }}
           >
-            <div><span className="text-purple-300 font-bold">400+</span> Students</div>
+            <div><span className="text-[#6FE7E1] font-bold">400+</span> Students</div>
             <span className="text-zinc-700">&bull;</span>
-            <div><span className="text-purple-300 font-bold">20–25</span> Core Team</div>
+            <div><span className="text-[#6FE7E1] font-bold">20–25</span> Core Team</div>
             <span className="text-zinc-700">&bull;</span>
-            <div><span className="text-purple-300 font-bold">500+</span> Attendees</div>
+            <div><span className="text-[#6FE7E1] font-bold">500+</span> Attendees</div>
           </div>
         </div>
 
@@ -72,7 +72,7 @@ export default function AWSLeadership() {
           >
             <div 
               data-spotlight
-              className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-black/60 border border-white/10 hover:border-purple-500/40 shadow-2xl transition-all duration-300 group"
+              className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-black/60 border border-white/10 hover:border-[#6FE7E1]/40 shadow-2xl transition-all duration-300 group"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <img
@@ -83,12 +83,12 @@ export default function AWSLeadership() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
 
                 {/* Top Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[11px] font-mono text-purple-300">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-[11px] font-mono text-[#6FE7E1]">
                   Campus Cloud Summit &bull; 500+ Attendees
                 </div>
 
                 {/* Chapter Emblem Badge */}
-                <div className="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black/85 backdrop-blur-md border border-purple-500/30 p-1.5 shadow-2xl">
+                <div className="absolute top-4 right-4 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-black/85 backdrop-blur-md border border-[#6FE7E1]/30 p-1.5 shadow-2xl">
                   <img
                     src={AWS_LEADERSHIP_DATA.logo}
                     alt="AWS SBG Chapter Emblem"
@@ -97,7 +97,7 @@ export default function AWSLeadership() {
                 </div>
 
                 {/* Bottom Photo Caption */}
-                <div className="absolute bottom-4 left-4 right-4 text-xs text-zinc-300 backdrop-blur-md bg-black/60 px-4 py-2.5 rounded-xl border border-white/10">
+                <div className="absolute bottom-4 left-4 right-4 text-xs text-[#F3F0E8]/90 backdrop-blur-md bg-black/60 px-4 py-2.5 rounded-xl border border-white/10">
                   <span className="font-semibold text-white">Flagship Stage Keynote:</span> Convening students, cloud practitioners, and AWS representatives.
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function AWSLeadership() {
                 <div
                   key={idx}
                   data-spotlight
-                  className="p-4 sm:p-5 rounded-2xl bg-[#09090f] border border-white/[0.08] hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg group relative overflow-hidden"
+                  className="p-4 sm:p-5 rounded-2xl bg-[#101214] border border-white/[0.08] hover:border-[#6FE7E1]/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg group relative overflow-hidden"
                   style={{
                     opacity: inView ? 1 : 0,
                     transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(24px, 0, 0)',
@@ -122,14 +122,14 @@ export default function AWSLeadership() {
                   <div 
                     className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
-                      background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.12), transparent 70%)'
+                      background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(111, 231, 225, 0.10), transparent 70%)'
                     }}
                   />
-                  <div className="flex items-center gap-2 text-xs font-bold text-white group-hover:text-purple-300 transition-colors">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#F3F0E8] group-hover:text-[#6FE7E1] transition-colors">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1]"></span>
                     <span>{h.title}</span>
                   </div>
-                  <p className="text-xs text-zinc-400 mt-1.5 leading-relaxed pl-3.5">
+                  <p className="text-xs text-[#A7AAA8] mt-1.5 leading-relaxed pl-3.5">
                     {h.desc}
                   </p>
                 </div>
@@ -139,19 +139,19 @@ export default function AWSLeadership() {
             {/* Leadership Trajectory with Sequential Node Illumination */}
             <div 
               data-spotlight
-              className="p-5 rounded-2xl bg-[#09090f] border border-white/[0.08] hover:border-purple-500/30 transition-all duration-700"
+              className="p-5 rounded-2xl bg-[#101214] border border-white/[0.08] hover:border-[#6FE7E1]/30 transition-all duration-700"
               style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, 20px, 0)',
                 transitionDelay: '500ms'
               }}
             >
-              <div className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-3 font-semibold flex items-center justify-between">
+              <div className="text-[11px] font-mono uppercase tracking-wider text-[#A7AAA8] mb-3 font-semibold flex items-center justify-between">
                 <span>Leadership Trajectory</span>
-                <span className="text-[10px] text-purple-400 font-mono">2023 → PRESENT</span>
+                <span className="text-[10px] text-[#6FE7E1] font-mono">2023 → PRESENT</span>
               </div>
               
-              <div className="space-y-4 relative pl-4 border-l border-purple-500/30">
+              <div className="space-y-4 relative pl-4 border-l border-[#6FE7E1]/30">
                 {AWS_LEADERSHIP_DATA.progression.map((step, idx) => (
                   <div 
                     key={idx} 
@@ -165,16 +165,16 @@ export default function AWSLeadership() {
                     {/* Animated Pulsing Node */}
                     <div className={`absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full transition-all duration-700 ${
                       idx === 2 
-                        ? 'bg-purple-400 shadow-[0_0_12px_#a855f7]' 
+                        ? 'bg-[#6FE7E1] shadow-[0_0_12px_#6FE7E1]' 
                         : 'bg-zinc-600'
                     }`}>
                       {idx === 2 && inView && (
-                        <div className="absolute inset-0 rounded-full bg-purple-400 animate-ping opacity-60"></div>
+                        <div className="absolute inset-0 rounded-full bg-[#6FE7E1] animate-ping opacity-60"></div>
                       )}
                     </div>
 
-                    <div className="text-xs font-mono font-bold text-white">{step.stage}</div>
-                    <div className="text-[11px] text-zinc-400">{step.desc}</div>
+                    <div className="text-xs font-mono font-bold text-[#F3F0E8]">{step.stage}</div>
+                    <div className="text-[11px] text-[#A7AAA8]">{step.desc}</div>
                   </div>
                 ))}
               </div>

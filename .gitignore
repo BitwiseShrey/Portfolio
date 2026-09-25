@@ -39,3 +39,4 @@ dist-ssr
 __pycache__/
 *.py[cod]
 .gemini/
+*.docx

@@ -205,7 +205,7 @@ export default function HangingIDCard() {
     >
       {/* Ambient Wall Shadow that follows the card in 3D space */}
       <div 
-        className="absolute top-28 w-[240px] h-[340px] rounded-[40px] bg-purple-950/20 blur-3xl pointer-events-none transition-transform duration-100 -z-10"
+        className="absolute top-28 w-[240px] h-[340px] rounded-[40px] bg-black/40 blur-3xl pointer-events-none transition-transform duration-100 -z-10"
         style={{
           transform: `translate3d(${renderPos.x * 0.5}px, ${renderPos.y * 0.4}px, 0) scale(${1 - renderPos.y * 0.001})`
         }}
@@ -227,15 +227,15 @@ export default function HangingIDCard() {
       >
         <defs>
           <linearGradient id="lanyardRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7e22ce" />
-            <stop offset="45%" stopColor="#4c1d95" />
-            <stop offset="85%" stopColor="#1e0b38" />
-            <stop offset="100%" stopColor="#0c0417" />
+            <stop offset="0%" stopColor="#2DBEB8" />
+            <stop offset="45%" stopColor="#15181A" />
+            <stop offset="85%" stopColor="#101214" />
+            <stop offset="100%" stopColor="#08090A" />
           </linearGradient>
 
           <linearGradient id="lanyardStitch" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#d8b4fe" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#a855f7" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#6FE7E1" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#7AA7FF" stopOpacity="0.4" />
           </linearGradient>
 
           <filter id="ribbonShadow" x="-30%" y="-30%" width="160%" height="160%">
@@ -302,14 +302,14 @@ export default function HangingIDCard() {
           {/* FRONT OF BADGE: Authentic Keynote / Pass Identity       */}
           {/* ======================================================== */}
           <div 
-            className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-[#161522] via-[#0d0c15] to-[#07070b] border-2 border-purple-500/40 p-4 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9),0_0_30px_rgba(168,85,247,0.18)]"
+            className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-[#15181A] via-[#101214] to-[#08090A] border-2 border-[#6FE7E1]/30 p-4 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9),0_0_30px_rgba(111,231,225,0.15)]"
             style={{ backfaceVisibility: 'hidden' }}
           >
             {/* Interactive Dynamic Holographic Foil Glare */}
             <div 
-              className="absolute inset-0 pointer-events-none rounded-3xl opacity-40 mix-blend-color-dodge transition-opacity duration-300"
+              className="absolute inset-0 pointer-events-none rounded-3xl opacity-35 mix-blend-color-dodge transition-opacity duration-300"
               style={{
-                background: `radial-gradient(circle 240px at ${renderPos.glareX}% ${renderPos.glareY}%, rgba(192,132,252,0.45), rgba(56,189,248,0.25), transparent 70%)`
+                background: `radial-gradient(circle 240px at ${renderPos.glareX}% ${renderPos.glareY}%, rgba(111,231,225,0.4), rgba(122,167,255,0.25), transparent 70%)`
               }}
             />
 
@@ -317,17 +317,17 @@ export default function HangingIDCard() {
             <div className="absolute -inset-full bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none transform rotate-45" />
 
             {/* Top Lanyard Slot Punch Hole */}
-            <div className="w-12 h-2.5 mx-auto -mt-1 mb-3 rounded-full bg-[#050508] border border-white/20 shadow-inner flex items-center justify-center">
+            <div className="w-12 h-2.5 mx-auto -mt-1 mb-3 rounded-full bg-[#08090A] border border-white/20 shadow-inner flex items-center justify-center">
               <div className="w-8 h-1 rounded-full bg-black"></div>
             </div>
 
             {/* Badge Top Header */}
             <div className="flex items-center justify-between border-b border-white/10 pb-2.5 mb-3">
               <div className="flex items-center gap-1.5">
-                <div className="w-5 h-5 rounded-md bg-purple-600 flex items-center justify-center font-bold text-[10px] text-white">
+                <div className="w-5 h-5 rounded-md bg-[#6FE7E1] flex items-center justify-center font-bold text-[10px] text-[#08090A]">
                   SU
                 </div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-300 font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#F3F0E8]/90 font-bold">
                   VIT BHOPAL PASS
                 </span>
               </div>
@@ -335,7 +335,7 @@ export default function HangingIDCard() {
               {/* Flip Button */}
               <button
                 onClick={toggleFlip}
-                className="no-drag flex items-center gap-1 px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/15 border border-purple-400/30 text-[9px] font-mono text-purple-300 transition-colors"
+                className="no-drag flex items-center gap-1 px-2 py-0.5 rounded-lg bg-white/5 hover:bg-white/15 border border-[#6FE7E1]/30 text-[9px] font-mono text-[#6FE7E1] transition-colors"
                 title="Flip to view access chip"
               >
                 <RefreshCw className="w-2.5 h-2.5" />
@@ -352,7 +352,7 @@ export default function HangingIDCard() {
                 draggable="false"
               />
               
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c15] via-transparent to-transparent opacity-60 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090A] via-transparent to-transparent opacity-60 pointer-events-none"></div>
 
               {/* Live Status Ribbon */}
               <div className="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md border border-white/15 flex items-center justify-between text-[10px] font-mono text-white shadow-lg">
@@ -366,22 +366,22 @@ export default function HangingIDCard() {
 
             {/* Personal Details */}
             <div className="space-y-1 text-left px-0.5">
-              <div className="text-[10px] font-mono uppercase tracking-wider text-purple-400 font-bold flex items-center justify-between">
+              <div className="text-[10px] font-mono uppercase tracking-wider text-[#6FE7E1] font-bold flex items-center justify-between">
                 <span>{PERSONAL_INFO.role}</span>
                 <span className="text-zinc-500 font-normal">#SU-PASS</span>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#F3F0E8] tracking-tight leading-none">
                 {PERSONAL_INFO.name}
               </h3>
 
-              <p className="text-[11px] text-zinc-300 font-medium">
+              <p className="text-[11px] text-[#A7AAA8] font-medium">
                 Product • Technology • Leadership
               </p>
 
-              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-zinc-400">
+              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-[#A7AAA8]">
                 <span>VIT Bhopal University</span>
-                <span className="text-purple-300 font-semibold">{PERSONAL_INFO.education.degree}</span>
+                <span className="text-[#6FE7E1] font-semibold">{PERSONAL_INFO.education.degree}</span>
               </div>
             </div>
 
@@ -399,7 +399,7 @@ export default function HangingIDCard() {
 
               <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-tighter text-right">
                 <div>BATCH 2023–27</div>
-                <div className="text-purple-400 font-bold">KANPUR / BHOPAL</div>
+                <div className="text-[#6FE7E1] font-bold">KANPUR / BHOPAL</div>
               </div>
             </div>
 
@@ -409,7 +409,7 @@ export default function HangingIDCard() {
           {/* BACK OF BADGE: NFC / Credentials / Access Pass           */}
           {/* ======================================================== */}
           <div 
-            className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-b from-[#141220] via-[#0e0c18] to-[#08070e] border-2 border-purple-500/40 p-4 shadow-2xl flex flex-col justify-between"
+            className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-b from-[#15181A] via-[#101214] to-[#08090A] border-2 border-[#6FE7E1]/30 p-4 shadow-2xl flex flex-col justify-between"
             style={{ 
               backfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)'
@@ -419,12 +419,12 @@ export default function HangingIDCard() {
             <div 
               className="absolute inset-0 pointer-events-none rounded-3xl opacity-30 mix-blend-color-dodge"
               style={{
-                background: `radial-gradient(circle 240px at ${100 - renderPos.glareX}% ${renderPos.glareY}%, rgba(192,132,252,0.4), rgba(56,189,248,0.2), transparent 70%)`
+                background: `radial-gradient(circle 240px at ${100 - renderPos.glareX}% ${renderPos.glareY}%, rgba(111,231,225,0.4), rgba(122,167,255,0.2), transparent 70%)`
               }}
             />
 
             {/* Top Lanyard Slot Punch Hole */}
-            <div className="w-12 h-2.5 mx-auto -mt-1 rounded-full bg-[#050508] border border-white/20 shadow-inner flex items-center justify-center">
+            <div className="w-12 h-2.5 mx-auto -mt-1 rounded-full bg-[#08090A] border border-white/20 shadow-inner flex items-center justify-center">
               <div className="w-8 h-1 rounded-full bg-black"></div>
             </div>
 
@@ -437,13 +437,13 @@ export default function HangingIDCard() {
             {/* Access Chip Details */}
             <div className="space-y-2 text-left">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-white">
-                  <Cpu className="w-4 h-4 text-purple-400" />
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#F3F0E8]">
+                  <Cpu className="w-4 h-4 text-[#6FE7E1]" />
                   <span>Verified Credentials</span>
                 </div>
                 <button
                   onClick={toggleFlip}
-                  className="no-drag px-2 py-0.5 rounded bg-white/5 hover:bg-white/15 border border-purple-400/30 text-[9px] font-mono text-purple-300 transition-colors"
+                  className="no-drag px-2 py-0.5 rounded bg-white/5 hover:bg-white/15 border border-[#6FE7E1]/30 text-[9px] font-mono text-[#6FE7E1] transition-colors"
                 >
                   FLIP BACK
                 </button>
@@ -453,7 +453,7 @@ export default function HangingIDCard() {
               <div className="space-y-1.5 text-[11px] font-mono">
                 <div className="p-2 rounded-xl bg-black/40 border border-white/10 flex justify-between">
                   <span className="text-zinc-400">Leadership:</span>
-                  <span className="text-purple-300 font-bold">AWS SBG Leader</span>
+                  <span className="text-[#6FE7E1] font-bold">AWS SBG Leader</span>
                 </div>
                 <div className="p-2 rounded-xl bg-black/40 border border-white/10 flex justify-between">
                   <span className="text-zinc-400">Flagship:</span>
@@ -469,10 +469,10 @@ export default function HangingIDCard() {
             {/* QR Code & Direct Connect */}
             <div className="p-3 rounded-2xl bg-black/60 border border-white/10 flex items-center justify-between gap-3">
               <div className="space-y-1">
-                <div className="text-[10px] font-mono text-purple-300 font-bold uppercase">
+                <div className="text-[10px] font-mono text-[#6FE7E1] font-bold uppercase">
                   DIRECT CONTACT
                 </div>
-                <div className="text-[11px] text-zinc-200 font-medium">
+                <div className="text-[11px] text-[#F3F0E8] font-medium">
                   {PERSONAL_INFO.email}
                 </div>
                 <div className="text-[9px] font-mono text-zinc-500">
@@ -489,7 +489,7 @@ export default function HangingIDCard() {
             {/* Back Footer */}
             <div className="text-[9px] font-mono text-zinc-500 flex items-center justify-between border-t border-white/10 pt-2">
               <span>STATUS: ALL ACCESS PASS</span>
-              <span className="text-purple-400 font-semibold">AUTHENTICATED</span>
+              <span className="text-[#6FE7E1] font-semibold">AUTHENTICATED</span>
             </div>
 
           </div>
@@ -502,10 +502,10 @@ export default function HangingIDCard() {
       <div className="absolute bottom-2 z-10 flex items-center gap-2">
         <div className={`px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-300 flex items-center gap-1.5 border shadow-lg ${
           isDraggingState 
-            ? 'bg-purple-500/25 border-purple-400/50 text-purple-200' 
+            ? 'bg-[#6FE7E1]/20 border-[#6FE7E1]/40 text-[#6FE7E1]' 
             : 'bg-black/60 backdrop-blur-md border-white/10 text-zinc-400'
         }`}>
-          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1] animate-pulse"></span>
           <span>{isDraggingState ? 'Swinging Badge...' : 'Drag badge to swing • Flip for NFC pass'}</span>
         </div>
 

@@ -12,8 +12,8 @@ export default function EventVideos() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono">
-            <Film className="w-3.5 h-3.5 text-purple-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-mono">
+            <Film className="w-3.5 h-3.5 text-teal-400" />
             <span>CINEMATIC MEDIA & DEMOS</span>
           </div>
 
@@ -32,7 +32,7 @@ export default function EventVideos() {
             <div
               key={video.id}
               onClick={() => setSelectedVideo(video)}
-              className="rounded-3xl bg-[#11111a] border border-white/10 hover:border-purple-500/50 overflow-hidden cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-950/30 flex flex-col justify-between"
+              className="rounded-3xl bg-[#11111a] border border-white/10 hover:border-teal-500/50 overflow-hidden cursor-pointer group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-950/30 flex flex-col justify-between"
             >
               {/* Thumbnail Container */}
               <div className="aspect-[16/9] relative bg-black/60 overflow-hidden">
@@ -47,7 +47,7 @@ export default function EventVideos() {
                 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-purple-600/90 border border-purple-400/40 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-purple-500 transition-all duration-200">
+                  <div className="w-14 h-14 rounded-full bg-teal-600/90 border border-teal-400/40 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-teal-500 transition-all duration-200">
                     <Play className="w-6 h-6 ml-0.5 fill-white text-white" />
                   </div>
                 </div>
@@ -60,10 +60,10 @@ export default function EventVideos() {
 
               {/* Information Body */}
               <div className="p-6 space-y-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-purple-400 font-semibold">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-teal-400 font-semibold">
                   {video.category}
                 </span>
-                <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                <h3 className="text-lg font-bold text-white group-hover:text-teal-300 transition-colors">
                   {video.title}
                 </h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -73,7 +73,7 @@ export default function EventVideos() {
                 {/* Drop-in Status Indicator */}
                 <div className="pt-3 mt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-500">
                   <span>File: {video.videoSrc.split('/').pop()}</span>
-                  <span className="text-purple-400 font-semibold">Watch Reel &rarr;</span>
+                  <span className="text-teal-400 font-semibold">Watch Reel &rarr;</span>
                 </div>
               </div>
 
@@ -92,3 +92,4 @@ export default function EventVideos() {
     </section>
   );
 }
+

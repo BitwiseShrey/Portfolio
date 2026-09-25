@@ -5,6 +5,16 @@
 @layer base {
   :root {
     color-scheme: dark;
+    --bg-obsidian: #08090A;
+    --surface-primary: #101214;
+    --surface-secondary: #15181A;
+    --text-primary: #F3F0E8;
+    --text-secondary: #A7AAA8;
+    --accent-teal: #6FE7E1;
+    --accent-azure: #7AA7FF;
+    --highlight: #DCE9FF;
+    --border-subtle: rgba(243, 240, 232, 0.10);
+    --border-faint: rgba(243, 240, 232, 0.05);
   }
   
   html {
@@ -12,10 +22,16 @@
   }
   
   body {
-    background-color: #050507;
-    color: #f4f4f7;
+    background-color: #08090A;
+    color: #F3F0E8;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
+  }
+
+  /* Accessible Keyboard Focus Indicators */
+  :focus-visible {
+    outline: 2px solid #6FE7E1;
+    outline-offset: 3px;
   }
 
   /* Custom subtle scrollbar */
@@ -23,14 +39,14 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #050507;
+    background: #08090A;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1f1f28;
+    background: #181B1E;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #38384a;
+    background: #2A2F35;
   }
 }
 
@@ -59,14 +75,20 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
-.text-gradient-purple {
-  background: linear-gradient(135deg, #ffffff 40%, #d8b4fe 75%, #a855f7 100%);
+.text-gradient-teal {
+  background: linear-gradient(135deg, #F3F0E8 30%, #6FE7E1 80%, #7AA7FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-azure {
+  background: linear-gradient(135deg, #F3F0E8 40%, #7AA7FF 80%, #6FE7E1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-silver {
-  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 70%, #94a3b8 100%);
+  background: linear-gradient(180deg, #F3F0E8 0%, #DCE9FF 60%, #A7AAA8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -107,5 +129,5 @@
   content: "+";
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: rgba(168, 85, 247, 0.4);
+  color: rgba(111, 231, 225, 0.4);
 }

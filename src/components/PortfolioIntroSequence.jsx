@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 /**
  * PortfolioIntroSequence
@@ -9,7 +9,7 @@ import React, { useEffect, useState, useRef } from 'react';
  * 3. Letters of "portfolio" assemble individually (opacity, vertical displacement, blur-to-sharp, scale settle)
  * 4. Realistic matte-charcoal digital stylus pen enters from RIGHT, weaving continuously
  *    between/through the letters (RIGHT -> LEFT) with genuine SVG layer depth
- * 5. Localized purple illumination wash travels in sync with the pen
+ * 5. Localized teal/azure illumination wash travels in sync with the pen
  * 6. Pen exits LEFT; wordmark subtly activates and reacts
  * 7. Cinematic forward zoom transition: the wordmark scales forward into the camera (scale 3.8+, blur),
  *    becoming the gateway through which the viewer enters the live portfolio Hero
@@ -111,8 +111,8 @@ export default function PortfolioIntroSequence({ onComplete }) {
     };
   }, [onComplete]);
 
-  // Handle Skip button
-  const handleSkip = () => {
+  // Handle Skip button & Escape key
+  const handleSkip = useCallback(() => {
     setIsSkipping(true);
     setPhase(6);
     setTimeout(() => {
@@ -121,7 +121,17 @@ export default function PortfolioIntroSequence({ onComplete }) {
       setIsCompleted(true);
       if (onComplete) onComplete();
     }, 350);
-  };
+  }, [onComplete]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleSkip();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleSkip]);
 
   if (isCompleted) return null;
 
@@ -145,16 +155,16 @@ export default function PortfolioIntroSequence({ onComplete }) {
 
   return (
     <div 
-      className={`fixed inset-0 z-[10000] w-screen h-screen bg-[#050507] flex flex-col justify-between p-6 sm:p-12 md:p-16 overflow-hidden select-none transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      className={`fixed inset-0 z-[10000] w-screen h-screen bg-[#08090A] flex flex-col justify-between p-6 sm:p-12 md:p-16 overflow-hidden select-none transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isZoomingForward ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-label="Portfolio Cinematic Title Sequence"
     >
-      {/* 1. Subtle Radial Ambient Violet Atmosphere */}
+      {/* 1. Subtle Radial Ambient Atmosphere */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] rounded-full blur-[170px] pointer-events-none transition-opacity duration-1000"
         style={{
-          background: 'radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(88, 28, 135, 0.05) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(111, 231, 225, 0.08) 0%, rgba(122, 167, 255, 0.04) 50%, transparent 70%)',
           opacity: phase >= 1 ? 1 : 0
         }}
       />
@@ -170,10 +180,10 @@ export default function PortfolioIntroSequence({ onComplete }) {
             transform: phase >= 1 && !isZoomingForward ? 'translate3d(0, 0, 0)' : 'translate3d(0, -16px, 0)'
           }}
         >
-          <h1 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-[0.25em] font-sans">
+          <h1 className="text-xs sm:text-sm font-extrabold text-[#F3F0E8] uppercase tracking-[0.25em] font-sans">
             Shreyansh Uttam
           </h1>
-          <p className="text-[10px] sm:text-xs font-mono text-purple-300 tracking-wider">
+          <p className="text-[10px] sm:text-xs font-mono text-[#6FE7E1] tracking-wider">
             Product × Technology × Leadership
           </p>
         </div>
@@ -181,11 +191,11 @@ export default function PortfolioIntroSequence({ onComplete }) {
         {/* Discreet Skip Intro Button */}
         <button
           onClick={handleSkip}
-          className="px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-purple-400/50 text-xs font-mono text-zinc-400 hover:text-white transition-all backdrop-blur-md flex items-center gap-1.5 cursor-pointer shadow-lg"
+          className="px-3.5 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#6FE7E1]/50 text-xs font-mono text-zinc-400 hover:text-white transition-all backdrop-blur-md flex items-center gap-1.5 cursor-pointer shadow-lg"
           title="Skip title sequence"
         >
           <span>Skip intro</span>
-          <span className="text-purple-400">&rarr;</span>
+          <span className="text-[#6FE7E1]">&rarr;</span>
         </button>
 
       </div>
@@ -211,7 +221,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           className="w-full h-auto max-w-[1020px] overflow-visible select-none"
           style={{
             filter: isWordmarkActivated 
-              ? 'drop-shadow(0 0 35px rgba(168, 85, 247, 0.45))' 
+              ? 'drop-shadow(0 0 35px rgba(111, 231, 225, 0.35))' 
               : 'drop-shadow(0 15px 25px rgba(0,0,0,0.8))',
             transition: 'filter 600ms ease-out'
           }}
@@ -236,7 +246,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
               <stop offset="0%" stopColor="#555566" />
               <stop offset="25%" stopColor="#30303a" />
               <stop offset="70%" stopColor="#1e1e26" />
-              <stop offset="100%" stopColor="#2a1e3b" /> {/* Subtle purple rim on underbelly */}
+              <stop offset="100%" stopColor="#182424" /> {/* Subtle teal rim on underbelly */}
             </linearGradient>
 
             {/* Pen Nib Titanium Gradient */}
@@ -246,7 +256,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
               <stop offset="100%" stopColor="#1c1c22" />
             </linearGradient>
 
-            {/* Localized Violet Illumination Wash (Centered at Pen Nib & Grip) */}
+            {/* Localized Teal/Sky Illumination Wash (Centered at Pen Nib & Grip) */}
             <radialGradient 
               id="penIllumination" 
               cx={`${penX + 60}`} 
@@ -254,9 +264,9 @@ export default function PortfolioIntroSequence({ onComplete }) {
               r="230" 
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0%" stopColor="#e9d5ff" stopOpacity="0.9" />
-              <stop offset="35%" stopColor="#a855f7" stopOpacity="0.5" />
-              <stop offset="70%" stopColor="#7e22ce" stopOpacity="0.18" />
+              <stop offset="0%" stopColor="#DCE9FF" stopOpacity="0.9" />
+              <stop offset="35%" stopColor="#6FE7E1" stopOpacity="0.5" />
+              <stop offset="70%" stopColor="#7AA7FF" stopOpacity="0.18" />
               <stop offset="100%" stopColor="#000000" stopOpacity="0" />
             </radialGradient>
 
@@ -302,7 +312,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           </g>
 
           {/* ---------------------------------------------------- */}
-          {/* SVG LAYER 2: LOCALIZED PURPLE ILLUMINATION WASH      */}
+          {/* SVG LAYER 2: LOCALIZED TEAL/AZURE ILLUMINATION WASH  */}
           {/* ---------------------------------------------------- */}
           <g 
             style={{
@@ -313,7 +323,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
               opacity: penGlowOpacity
             }}
             fill="url(#penIllumination)"
-            stroke="#c084fc"
+            stroke="#6FE7E1"
             strokeWidth="0.8"
             strokeOpacity="0.45"
             pointerEvents="none"
@@ -409,15 +419,15 @@ export default function PortfolioIntroSequence({ onComplete }) {
               strokeWidth="0.8" 
             />
 
-            {/* Subtle Violet Reflected Light on Underbelly */}
+            {/* Subtle Reflected Light on Underbelly */}
             <line 
               x1="95" 
               y1="140.5" 
               x2="275" 
               y2="139" 
-              stroke="#a855f7" 
+              stroke="#6FE7E1" 
               strokeWidth="0.8" 
-              strokeOpacity="0.65" 
+              strokeOpacity="0.45" 
             />
 
             {/* 3E. Rounded Metallic Tail Cap */}
@@ -513,7 +523,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
           </g>
 
           {/* ---------------------------------------------------- */}
-          {/* SVG LAYER 5: FOREGROUND LETTER AMBIENT PURPLE WASH   */}
+          {/* SVG LAYER 5: FOREGROUND LETTER AMBIENT WASH          */}
           {/* ---------------------------------------------------- */}
           <g 
             style={{
@@ -524,7 +534,7 @@ export default function PortfolioIntroSequence({ onComplete }) {
               opacity: penGlowOpacity
             }}
             fill="url(#penIllumination)"
-            stroke="#c084fc"
+            stroke="#6FE7E1"
             strokeWidth="0.8"
             strokeOpacity="0.45"
             pointerEvents="none"

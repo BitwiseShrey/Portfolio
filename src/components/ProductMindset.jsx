@@ -46,7 +46,7 @@ export default function ProductMindset() {
   ];
 
   return (
-    <section id="mindset" ref={ref} className="py-20 md:py-32 border-t border-white/[0.08] bg-[#050508] relative overflow-hidden">
+    <section id="mindset" ref={ref} className="py-20 md:py-32 border-t border-white/[0.08] bg-[#08090A] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Statement Enters First with Typography Mask */}
@@ -57,16 +57,16 @@ export default function ProductMindset() {
             transform: inView ? 'translate3d(0, 0, 0)' : 'translate3d(0, -28px, 0)'
           }}
         >
-          <div className="text-[11px] font-mono uppercase tracking-widest text-purple-400 font-semibold flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
-            <span>Product Philosophy</span>
+          <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#6FE7E1] font-medium flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#6FE7E1]"></span>
+            <span>08 / PRODUCT PHILOSOPHY</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
+          <h2 className="text-3xl sm:text-5xl font-normal font-serif text-[#F3F0E8] tracking-tight leading-[1.12]">
             "I don't just ask how to build it. <br />
-            <span className="text-gradient-purple">I ask why it should exist.</span>"
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6FE7E1] via-[#7AA7FF] to-[#DCE9FF]">I ask why it should exist.</span>"
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 max-w-xl">
+          <p className="text-xs sm:text-sm text-[#A7AAA8] max-w-xl leading-relaxed">
             A 5-step strategic discipline applied before and during product engineering.
           </p>
         </div>
@@ -82,8 +82,8 @@ export default function ProductMindset() {
                 onClick={() => setActiveStep(idx)}
                 className={`rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-500 cursor-pointer group relative overflow-hidden ${
                   isSelected
-                    ? 'bg-gradient-to-b from-[#161228] via-[#0e0c18] to-[#08080e] border-2 border-purple-500/40 shadow-xl shadow-purple-950/30 -translate-y-1.5'
-                    : 'bg-[#09090f] border border-white/[0.08] hover:border-purple-500/40 hover:-translate-y-1.5 hover:shadow-lg'
+                    ? 'bg-gradient-to-b from-[#15181A] via-[#101214] to-[#08090A] border-2 border-[#6FE7E1]/40 shadow-xl shadow-black/60 -translate-y-1.5'
+                    : 'bg-[#101214] border border-white/[0.08] hover:border-[#6FE7E1]/40 hover:-translate-y-1.5 hover:shadow-lg'
                 }`}
                 style={{
                   opacity: inView ? 1 : 0,
@@ -95,34 +95,34 @@ export default function ProductMindset() {
                 <div 
                   className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
-                    background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(168, 85, 247, 0.12), transparent 70%)'
+                    background: 'radial-gradient(circle 140px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(111, 231, 225, 0.10), transparent 70%)'
                   }}
                 />
 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-mono font-bold text-purple-400 uppercase tracking-wider">
+                    <span className="text-[11px] font-mono font-bold text-[#6FE7E1] uppercase tracking-wider">
                       {item.step} &bull; {item.domain}
                     </span>
                     <span className={`w-2 h-2 rounded-full transition-all ${
-                      isSelected ? 'bg-purple-400 shadow-[0_0_8px_#c084fc]' : 'bg-white/10 group-hover:bg-purple-400/50'
+                      isSelected ? 'bg-[#6FE7E1] shadow-[0_0_8px_#6FE7E1]' : 'bg-white/10 group-hover:bg-[#6FE7E1]/50'
                     }`}></span>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors leading-snug">
+                  <h3 className="text-base sm:text-lg font-bold text-[#F3F0E8] group-hover:text-[#6FE7E1] transition-colors leading-snug">
                     {item.question}
                   </h3>
 
-                  <p className="text-xs text-zinc-400 leading-relaxed pt-1">
+                  <p className="text-xs text-[#A7AAA8] leading-relaxed pt-1">
                     {item.desc}
                   </p>
                 </div>
 
                 <div className="pt-4 mt-4 border-t border-white/[0.06]">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 mb-1">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#A7AAA8]/70 mb-1">
                     Execution
                   </div>
-                  <p className="text-[11px] text-zinc-300 leading-relaxed font-mono">
+                  <p className="text-[11px] text-[#F3F0E8]/80 leading-relaxed font-mono">
                     {item.execution}
                   </p>
                 </div>

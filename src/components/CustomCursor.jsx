@@ -147,7 +147,7 @@ export default function CustomCursor() {
       {/* Precision Center Dot */}
       <div
         ref={dotRef}
-        className={`fixed top-0 left-0 rounded-full bg-purple-300 transition-all duration-150 ease-out pointer-events-none shadow-[0_0_10px_rgba(168,85,247,0.8)] ${
+        className={`fixed top-0 left-0 rounded-full bg-[#6FE7E1] transition-all duration-150 ease-out pointer-events-none shadow-[0_0_10px_rgba(111,231,225,0.8)] ${
           isInteractive ? 'w-2 h-2 opacity-80' : 'w-2 h-2 opacity-100'
         } ${cursorState.isClicking ? 'scale-75' : 'scale-100'}`}
         style={{ willChange: 'transform' }}
@@ -158,15 +158,15 @@ export default function CustomCursor() {
         ref={ringRef}
         className={`fixed top-0 left-0 rounded-full border pointer-events-none flex items-center justify-center transition-all duration-200 ease-out ${
           label
-            ? 'w-16 h-16 bg-purple-950/70 border-purple-400/80 backdrop-blur-sm shadow-[0_0_25px_rgba(168,85,247,0.35)]'
+            ? 'w-16 h-16 bg-[#101214]/85 border-[#6FE7E1]/80 backdrop-blur-sm shadow-[0_0_25px_rgba(111,231,225,0.35)]'
             : isInteractive
-            ? 'w-11 h-11 bg-purple-500/15 border-purple-400/60 shadow-[0_0_16px_rgba(168,85,247,0.25)]'
-            : 'w-7 h-7 bg-transparent border-purple-500/35'
+            ? 'w-11 h-11 bg-[#6FE7E1]/15 border-[#6FE7E1]/60 shadow-[0_0_16px_rgba(111,231,225,0.25)]'
+            : 'w-7 h-7 bg-transparent border-[#6FE7E1]/35'
         } ${cursorState.isClicking ? 'scale-90' : 'scale-100'}`}
         style={{ willChange: 'transform' }}
       >
         {label && (
-          <span className="text-[9px] font-mono font-bold tracking-wider text-purple-200 uppercase select-none animate-fade-in">
+          <span className="text-[9px] font-mono font-bold tracking-wider text-[#6FE7E1] uppercase select-none animate-fade-in">
             {label}
           </span>
         )}

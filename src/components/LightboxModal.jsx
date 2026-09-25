@@ -47,7 +47,7 @@ export default function LightboxModal({ isOpen, onClose, item }) {
       <div className="absolute inset-0" onClick={onClose}></div>
 
       {/* Modal Content Window */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#0f0e16] border border-white/15 shadow-2xl z-10 flex flex-col">
+      <div className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#101214] border border-[#6FE7E1]/30 shadow-2xl z-10 flex flex-col">
         
         {/* Close Button */}
         <button
@@ -120,7 +120,7 @@ export default function LightboxModal({ isOpen, onClose, item }) {
                   onClick={() => setActiveImgIdx(idx)}
                   className={`relative w-14 h-11 sm:w-16 sm:h-12 rounded-lg overflow-hidden border transition-all shrink-0 ${
                     activeImgIdx === idx
-                      ? 'border-purple-500 ring-2 ring-purple-500/40 scale-105'
+                      ? 'border-[#6FE7E1] ring-2 ring-[#6FE7E1]/40 scale-105'
                       : 'border-white/20 opacity-50 hover:opacity-100'
                   }`}
                 >
@@ -138,47 +138,47 @@ export default function LightboxModal({ isOpen, onClose, item }) {
         {/* Details Content */}
         <div className="p-6 sm:p-8 space-y-5">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-mono uppercase px-2.5 py-1 rounded-md bg-purple-500/20 text-purple-300 font-semibold border border-purple-500/30">
+            <span className="text-xs font-mono uppercase px-2.5 py-1 rounded-md bg-[#6FE7E1]/15 text-[#6FE7E1] font-semibold border border-[#6FE7E1]/30">
               {item.category}
             </span>
             {item.date && (
-              <span className="text-xs font-mono text-zinc-400 flex items-center gap-1">
+              <span className="text-xs font-mono text-[#A7AAA8] flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />
                 {item.date}
               </span>
             )}
             {item.role && (
-              <span className="text-xs font-mono text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2.5 py-0.5 rounded">
+              <span className="text-xs font-mono text-[#6FE7E1] bg-[#6FE7E1]/10 border border-[#6FE7E1]/20 px-2.5 py-0.5 rounded">
                 Role: {item.role}
               </span>
             )}
           </div>
 
           <div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#F3F0E8]">
               {item.title}
             </h3>
             {item.host && (
-              <p className="text-sm font-medium text-purple-300 mt-1">
+              <p className="text-sm font-medium text-[#6FE7E1] mt-1">
                 {item.host}
               </p>
             )}
           </div>
 
-          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#A7AAA8] leading-relaxed">
             {item.description}
           </p>
 
           {item.highlights && item.highlights.length > 0 && (
             <div className="pt-4 border-t border-white/10">
-              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 block mb-2.5">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#A7AAA8] block mb-2.5">
                 Key Event Contributions
               </span>
               <div className="flex flex-wrap gap-2">
                 {item.highlights.map((h, i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-zinc-300 font-medium"
+                    className="text-xs px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-[#F3F0E8] font-medium"
                   >
                     &bull; {h}
                   </span>
